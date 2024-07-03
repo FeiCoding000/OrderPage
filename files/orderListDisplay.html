@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            width: 90vw;
+            border: black 1px solid;
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box
+
+        }
+        h1{
+            color: bisque;
+            text-shadow: 1px 1px 1px black;
+            font-size: 30px;
+            text-align: center;}
+
+        hr{
+            color: white;
+            border: 1px solid white;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        li{
+            display: flex;
+            width: 100%;
+    
+            justify-content: space-between ;
+            align-items: center;
+            border: 1px solid white;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 5px;
+        }
+        button{
+            background-color: red;
+            color: white;
+            border: white 1px solid;
+            border-radius: 20px;
+            width: 100px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: white;
+            color: red;
+            border: red 1px solid;
+
+        }
+    </style>
+</head>
+<body>
+<h1>Order List</h1>
+<hr>
+<ul id="order-list"></ul>
+
+
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="list.js"></script>
+<script>
+   // setInterval(getOrderList, 10000);
+    //setInterval(console.log("test"), 1000);
+    getOrderList();
+    setInterval(getOrderList, 10000);
+    //console.log(orderList);
+  
+</script>
+
+
+
+</body>
+</html>

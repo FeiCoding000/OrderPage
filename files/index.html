@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Order Now!</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container_main">
+        <div class="navbar">
+            <div class="info_group">
+                <ul>
+                    <li>Home</li>
+                    <li>News</li>
+                    <li>Feedback</li>
+                </ul>
+            </div>
+            <div class="logo" style="background-image: url(./1.png);"></div>
+        </div>
+        <div class="container">
+            <div class="panel active">
+                <h1>Classic Coffee</h1>
+                <fieldset class="fieldset">
+                    <legend>CLassic Coffee</legend>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Coffee</h3>
+                        </div>                   
+                        <select class="coffee_type" id="type_classic" >
+    
+                                <option value="Flate White">Flat White</option>
+                                <option value="Long Black">Long Black</option>
+                                <option value="Cappuccino">Cappuccino</option>
+                                <option value="Espresso">Espresso</option>
+                                <option value="Cafe Latte">Cafe Latte</option>
+                                <option value="Cafe Mocha">Cafe Mocha</option>
+                        </select>  
+                    </div>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Strength</h3>
+                        </div>
+                        <select class="coffee_type" id="strength_classic">
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                            <option value="1/2">1/2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option> 
+                        </select>
+                    </div>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Milk</h3>
+                        </div>
+                        <select class="coffee_type" id="milk_classic">
+                            <option value="Full Cream">Full Cream</option>
+                            <option value="Lite Milk">Lite Milk</option>
+                            <option value="Almond Milk">Almond Milk</option>
+                            <option value="Oat Milk">Oat Milk</option>
+                            <option value="Soy Milk">Soy Milk</option>
+                            <option value="Lactose Free">Lactose Free Full Cream Milk</option> 
+                            <option value="None">No Milk</option> 
+                        </select>
+                    </div>
+                    <div class="coffeeType submit_zone">
+                        <button id="submit-classic">Submit</button>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- decaf coffee -->
+            <div class="panel">
+                <h1>Decaf Coffee</h1>
+                <fieldset class="hidden">
+                    <legend>Decaf Coffee</legend>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Coffee</h3>
+                        </div>                   
+                        <select class="coffee_type" id="type_decaf" >
+    
+                                <option value="Decaf Flate White">Flat White</option>
+                                <option value="Decaf Long Black">Long Black</option>
+                                <option value="Decaf Cappuccino">Cappuccino</option>
+                                <option value="Decaf Espresso">Espresso</option>
+                                <option value="Decaf Cafe Latte">Cafe Latte</option>
+                                <option value="Decaf Cafe Mocha">Cafe Mocha</option>
+                        </select>  
+                    </div>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Strength</h3>
+                        </div>
+                        <select class="coffee_type" id="strength_decaf">
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                            <option value="1/2">1/2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option> 
+                        </select>
+                    </div>
+                    <div class="coffeeType">
+                        <div class="circle">
+                            <h3 class="textInCircle">Milk</h3>
+                        </div>
+                        <select class="coffee_type" id="milk_decaf">
+                            <option value="Full Cream">Full Cream</option>
+                            <option value="Lite Milk">Lite Milk</option>
+                            <option value="Almond Milk">Almond Milk</option>
+                            <option value="Oat Milk">Oat Milk</option>
+                            <option value="Soy Milk">Soy Milk</option>
+                            <option value="Lactose Free">Lactose Free Full Cream Milk</option> 
+                            <option value="None">No Milk</option> 
+                        </select>
+                    </div>
+                    <div class="coffeeType submit_zone">
+                        <button id="submit-decaf">Submit</button>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="panel">
+                <h1>Iced Drinks</h1>
+                <fieldset class="hidden">
+                    <legend>Iced Drinks</legend>
+                </fieldset>
+            </div>
+            <div class="panel">
+                <h1>Tea&Others</h1>
+                <fieldset class="hidden">
+                    <legend>Tea&Others</legend>
+                </fieldset>
+            </div>
+        </div>
+
+    </div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./list.js"></script>
+    <script>
+        const panels = document.querySelectorAll('.panel');
+        const fieldsets=document.querySelectorAll('fieldset');
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+            panel.classList.remove('active');
+            })
+        };
+        function hideFieldset() {
+            fieldsets.forEach(fieldset => {
+            fieldset.classList.add('hidden');
+            
+        })
+        };
+        
+        panels.forEach(panel => {
+        panel.addEventListener('click', () => {
+        removeActiveClasses();
+        hideFieldset();
+        panel.querySelector('fieldset').classList.remove('hidden');
+        panel.classList.add('active');
+
+    })
+    });
+    </script>
+</body>
+</html>
